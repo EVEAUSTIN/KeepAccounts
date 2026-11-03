@@ -1,0 +1,49 @@
+{
+  "name": "keepaccountsapp",
+  "version": "1.1.0",
+  "description": "个人记账",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis"
+  },
+  "devDependencies": {
+    "electron": "45.0.0",
+    "electron-builder": "26.18.0"
+  },
+  "build": {
+    "appId": "com.personal.keepaccounts.v2",
+    "productName": "记得记账新版",
+    "files": [
+      "main.js",
+      "index.html",
+      "package.json"
+    ],
+    "win": {
+      "target": "nsis",
+      "signAndEditExecutable": false
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "记得记账新版"
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "EVEAUSTIN",
+        "repo": "KeepAccounts",
+        "releaseType": "release"
+      }
+    ]
+  },
+  "dependencies": {
+    "electron-updater": "^6.8.11"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/EVEAUSTIN/KeepAccounts.git"
+  }
+}
